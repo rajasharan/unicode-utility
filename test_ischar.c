@@ -7,7 +7,12 @@ int main(void)
 {
         char *c = "¢";
         int len = u_ischar(c);
-        printf("char size: %d bytes\n", len);
+        printf("¢: %d bytes\n", len);
         assert(len == 2);
+
+        c = "ण";
+        len = u_ischar(c);
+        printf("ण: %d bytes\n", len);
+        assert(len == 3);
         return 0;
 }
