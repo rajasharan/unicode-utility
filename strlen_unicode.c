@@ -15,6 +15,12 @@ int u_strlen(char *c)
                          * but incrementing c anyway
                          */
                         c++;
+                        /* possible cases why we reached here:
+                         * 1. genuinely not a utf-8, so incrementing won't hurt
+                         * 2. character terminated in the middle of code-point,
+                         *    this is a bug, just incrementing won't solve it,
+                         *    we need to know how many bytes to increment (TODO)
+                         */
                 }
                 else if (l < 0) {
                         break;

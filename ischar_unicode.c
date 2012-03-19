@@ -42,6 +42,10 @@ int u_ischar(char *c)
                                         j++;
                                 }
                                 else {
+                                        /* maybe character encounted null byte in the middle
+                                         * of code-point due to lack of space,
+                                         * maybe return different error code (TODO)
+                                         */
                                         utf = 0;
                                         break;
                                 }
