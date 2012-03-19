@@ -9,13 +9,17 @@ int u_strlen(char *c)
         int l, len=0;
         while (c != '\0') {
                 l = u_ischar(c);
-                if (!l) {
+                if (l == 0) {
                         /* not utf-8 character
                          * should not have reached here
-                         * but increamenting c anyway
+                         * but incrementing c anyway
                          */
                         c++;
-                } else {
+                }
+                else if (l < 0) {
+                        break;
+                }
+                else {
                         c += l;
                 }
                 len++;

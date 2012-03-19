@@ -2,9 +2,13 @@
 
 /* return: number of bytes of the first utf-8 char starting at c
  * 0: not a utf-8 char
+ * -1: c is null byte
  */
 int u_ischar(char *c)
 {
+        if (*c == '\0')
+                return -1;
+
         char u[7];
         u[0] = 0x80; /* 0b10XXXXXX; secondary byte */
 

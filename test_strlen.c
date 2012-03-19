@@ -7,7 +7,7 @@ int main(void)
 {
         char *c = "ahßƒ∫∂lk";
         int len = u_strlen(c);
-        printf("strlen: %d\n", len);
+        printf("ahßƒ∫∂lk: %d bytes\n", len);
         assert(len == 8);
         return 0;
 }
