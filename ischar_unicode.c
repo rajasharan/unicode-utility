@@ -1,12 +1,12 @@
 #include "unicode_util.h"
 
 /* return: number of bytes of the first utf-8 char starting at c
- * 0: not a utf-8 char
- * -1: c is null byte
+ *  0: not a utf-8 char
+ * -1: c is null pointer
  */
 int u_ischar(char *c)
 {
-        if (*c == '\0')
+        if (c == NULL)
                 return -1;
 
         char u[7];
